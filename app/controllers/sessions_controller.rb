@@ -9,6 +9,10 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
+      @auth = request.env['omniauth.auth']
+      @token = @auth["credentials"]["token"]
+      ENV['token'] = @token
+
       redirect_to profile_path
     else
       redirect_to root_url
