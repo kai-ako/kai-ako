@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/kai-ako/kai-ako.png?label=ready&title=Ready)](https://waffle.io/kai-ako/kai-ako)
 # kai-ako
 The base for the KaiAko open source learning management system.
 
