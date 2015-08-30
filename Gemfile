@@ -16,6 +16,7 @@ gem 'letter_opener', group: :development
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'figaro'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'
