@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'site#index'
 
+  resources :links
+
   get '/profile' => 'profile#show'
 
   get '/login' => 'sessions#new'
