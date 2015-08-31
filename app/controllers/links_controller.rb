@@ -4,6 +4,10 @@ class LinksController < ApplicationController
     redirect_to root_path
   end
 
+  def new 
+  	
+  end
+
   private
   def link_params
     params.require(:link).permit(:url, :title, :description)

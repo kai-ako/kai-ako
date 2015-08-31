@@ -2,7 +2,7 @@
   <h1>KaiAko</h1>
   <p>Welcome to the KaiAko learning management system.</p>
 
-  <p><%= link_to 'Add new link' %></p>
+  <p><%= link_to 'Add new link', new_link_path %></p>
 
   <% if logged_in? %>
     <%= link_to current_user.name, profile_path(current_user) %>
