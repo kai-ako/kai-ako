@@ -12,7 +12,7 @@ function get_api(response)
 }
 
 var script = document.createElement('script');
-script.src = 'https://api.github.com/user?callback=get_api&access_token=<%= @token %>';
+script.src = 'https://api.github.com/user?callback=get_api&access_token=<%= current_user.github_token %>';
 
 document.getElementsByTagName('head')[0].appendChild(script);
 </script>

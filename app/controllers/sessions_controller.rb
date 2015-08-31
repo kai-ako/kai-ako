@@ -5,12 +5,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.where(user_params).first_or_create
+    user= User.find_or_create_from_omniauth(request.env['omniauth.auth'])
 
-    if @user
-      session[:user_id] = @user.id
-      @auth = request.env['omniauth.auth']
-      @token = @auth["credentials"]["token"]
+    if user
+      session[:user_id] = user.id
       redirect_to profile_path
     else
       redirect_to root_url
@@ -22,9 +20,4 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
-  protected
-
-  def user_params
-    request.env['omniauth.auth'].permit(:uid, :provider)
-  end
 end
