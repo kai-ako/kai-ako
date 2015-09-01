@@ -16,7 +16,28 @@
       <%= link_to 'Log In with Github', login_path %>
     <% end %>
   </nav>
-
+  <div id="emo-state">
+    <%= form_for @emo_state do |f| %>
+      <div class="form-group">
+        <%= f.label :happy %>
+        <%= f.radio_button_tag(:emotion, "happy") %>
+      </div>
+      <div class="form-group">
+        <%= f.label :neutral %>
+        <%= f.radio_button_tag(:emotion, "neutral") %>
+      </div>
+      <div class="form-group">
+        <%= f.label :sad %>
+        <%= f.radio_button_tag(:emotion, "sad") %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :emotion, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit class: "btn emo-btn btn-sm" %>
+      </div>
+    <% end %>
+  </div>
 <%= yield %>
 
 </body>
