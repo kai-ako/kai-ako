@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/learning_objectives' => 'site#learning_objectives'
   get "/view_objectives" => "site#view_objectives"
+  get "/view_profile" => "site#view_profile"
+
 end
