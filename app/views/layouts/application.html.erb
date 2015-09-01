@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>KaiAko</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <nav>
-    <% if logged_in? %>
-      <%= link_to 'Home', root_path %> |
-      <%= link_to 'Profile', profile_path(current_user) %> |
-      <%= link_to 'Log Out', logout_path %>
-    <% else %>
-      <%= link_to 'Log In with Github', login_path %>
-    <% end %>
-  </nav>
+  <head>
+    <title>KaiAko</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav>
+      <% if logged_in? %>
+        <%= link_to 'Home', root_path %> |
+        <%= link_to 'Profile', profile_path(current_user) %> |
+        <%= link_to 'Log Out', logout_path %>
+      <% else %>
+        <%= link_to 'Log In with Github', login_path %>
+      <% end %>
+    </nav>
 
-<%= yield %>
+    <main class="container main" role="main">
+        <% if flash.alert %>
+          <div class="messages">
+            <div class="alert alert-danger" role="alert">
+              <%= flash.alert %>
+            </div>
+          </div>
+        <% end %>
 
-</body>
+      <% if flash.notice %>
+        <div class="messages">
+          <div class="alert alert-success" role="alert">
+            <%= flash.notice %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= yield %>
+
+    </main>
+  </body>
 </html>

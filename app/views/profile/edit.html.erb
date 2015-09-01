@@ -1,0 +1,11 @@
+<%= form_tag("/edit_profile", method: "post") do %>
+
+  <%= label_tag(:first_name, "First Name:") %>
+  <%= text_field_tag(:first_name) %>
+
+  <%= label_tag(:last_name, "Last Name:") %>
+  <%= text_field_tag(:last_name) %>
+
+  <%= submit_tag("Save Changes") %>
+
+<% end %>
