@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   get '/auth/github/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  post '/emo_state' => 'emo_state#create'
 end
