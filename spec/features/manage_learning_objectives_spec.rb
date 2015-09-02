@@ -2,25 +2,42 @@ require 'rails_helper'
 
 RSpec.feature "Learning objectives" do
 
-  before do
-    visit learning_objectives_path
+  context 'page paths' do
+
+    before :each do
+      visit learning_objectives_path
+    end
+
+    it "shows learning objectives page" do
+
+      expect(page.body).to have_css(".objectives")
+    end
+
+    it "shows a form with two inputs" do
+
+      expect(page.body).to have_css('title_field')
+      expect(page.body).to have_css('description_field')
+    end
+
+    it "clicks submit button and takes to new page" do
+
+      click_button('submit')
+      expect(page.body).to have_content('Success')
+    end
   end
 
-  it "shows learning objectives page" do
-    expect(page.body).to have_css(".objectives")
-  end
+  context 'testing database' do
 
-  it "shows a form with two inputs" do
-    fill_in("Title", with:  "Jory's cheat sheet")
-    fill_in("Description", with:  "capybara has a cool cheat sheet")
-    click_button('submit')
+    it "shows a form with two inputs" do
+      visit learning_objectives_path
 
-    expect(page).to have_content("Jory's cheat sheet")
-    expect(page).to have_content("capybara has a cool cheat sheet")
-  end
+      fill_in("Title", with:  "Jory's cheat sheet")
+      fill_in("Description", with:  "capybara has a cool cheat sheet")
+      click_link('submit')
 
-  it "clicks submit button and takes to new page" do
-    click_button('submit')
-    expect(page.body).to have_content('Success')
+      expect(page).to have_content("Jory's cheat sheet")
+      expect(page).to have_content("capybara has a cool cheat sheet")
+    end
   end
 end
+
