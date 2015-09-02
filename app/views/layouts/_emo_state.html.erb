@@ -1,9 +1,13 @@
 <form method="post" action="/emo_state" id="emo-state">
-  <fieldset>
-    Happy<input type="radio" value="happy" name="happy" class="emoticon">
-    Neutral<input type="radio" value="neutral" name="neutral" class="emoticon">
-    Sad<input type="radio" value="sad" name="sad" class="emoticon">
-    <input type="text" id="message" name="message" class="emo-text">
-    <input type="submit" value="Submit" class="btn btn-info btn-sm">
-  </fieldset>
+  <label id="emo_state_happy">Happy</label>
+  <input id="emo_state_happy" type="radio" value="happy"
+    name="emo_state[happy]" class="emoticon">
+  <label id="emo_state_neutral">Neutral</label>
+  <input id="emo_state_neutral" type="radio" value="neutral"
+    name="emo_state[neutral]" class="emoticon">
+  <label id="emo_state_sad">Sad</label>
+  <input id="emo_state[sad]" type="radio" value="sad"
+    name="sad" class="emoticon">
+  <input type="text" id="message" name="message" class="emo-text">
+  <input type="submit" value="Submit" class="btn btn-info btn-sm">
 </form>
