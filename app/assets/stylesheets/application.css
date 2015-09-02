@@ -21,3 +21,6 @@ body {
   max-width: 150px;
 }
 
+details, details > p {
+	padding-left: 10px;
+}
