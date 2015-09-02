@@ -21,14 +21,14 @@ body {
   max-width: 150px;
 }
 
-#new_link_form input {
+#new_link_form input, button, textarea {
   display: block;
   margin-top: 5px;
+  width: 200px;
 }
 
-#new_link_form button {
-  display: block;
-  margin-top: 5px;
+#new_link_form textarea {
+  height: 200px;
 }
 
 
