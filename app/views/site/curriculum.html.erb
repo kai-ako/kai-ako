@@ -1,0 +1,49 @@
+<div class="container">
+  <h1>KaiAko</h1>
+  <p>This is where the curriculum tree will reside</p>
+
+</div>
+<h1>Curriculum Tree</h1>
+
+
+
+<% this_hash = {
+		"a" => {
+		 	"1" => "this", 
+		 	"2" => "should", 
+		 	"3" => "print", 
+		 	"4" => {
+		 		"5" => "in", 
+		 		"6" => "this"
+		 	}
+		}, 
+		"b" => {
+			"7" => {
+		 		"8" => "order", 
+		 		"9" => "to"
+		 			}
+		 	}, 
+		"c" => {
+		 	"10" => "the", 
+		 	"11" => "page"
+		}
+	} %>
+
+<%=	populate_tree(this_hash).html_safe %>
+
+
+<!-- 
+
+	<div id="details_tree">
+	<details>
+		<summary>Show/Hide Details</summary>
+			<p>The Details of all importance: 
+				<details>
+					<summary>Show/Hide Details</summary>
+					<p>The Details of all importance</p>
+				</details> 
+			</p>
+	</details> 
+
+	</div>
+ -->

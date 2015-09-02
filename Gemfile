@@ -30,6 +30,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem 'rspec' 
 end
 
 group :production do
