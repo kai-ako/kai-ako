@@ -1,5 +1,7 @@
 class EmoStateController < ApplicationController
 
- def create
- end
+  def create
+    redirect_to :back
+  end
+
 end
