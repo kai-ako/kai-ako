@@ -1,13 +1,18 @@
-<form method="post" action="/emo_state" id="emo-state">
-  <label id="emo_state_happy">Happy</label>
-  <input id="emo_state_happy" type="radio" value="happy"
-    name="emo_state_emotion" class="emoticon">
-  <label id="emo_state_neutral">Neutral</label>
-  <input id="emo_state_neutral" type="radio" value="neutral"
-    name="emo_state_emotion" class="emoticon">
-  <label id="emo_state_sad">Sad</label>
-  <input id="emo_state_sad" type="radio" value="sad"
-    name="emo_state_emotion" class="emoticon">
-  <input type="text" id="message" name="emo_state_comment" class="emo-text">
-  <input type="submit" value="Submit" class="btn btn-info btn-sm">
-</form>
+
+<%= form_for :emo_state, url: emo_state_path do |f| %>
+
+  <%= f.label :happy %>
+  <%= f.radio_button("emotion", "happy") %>
+
+  <%= f.label :neutral %>
+  <%= f.radio_button("emotion", "neutral") %>
+
+  <%= f.label :sad %>
+  <%= f.radio_button("emotion", "sad") %>
+
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+
+  <%= f.submit %>
+
+<% end %>
