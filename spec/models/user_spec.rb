@@ -1,4 +1,4 @@
-require 'rails_helper'
+xrequire 'rails_helper'
 
 RSpec.describe User, type: :model do
 
