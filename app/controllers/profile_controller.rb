@@ -1,7 +1,6 @@
 class ProfileController < ApplicationController
 
  def show
-	 @token = session[:github_token]
-	 @token ? @token : (redirect_to root_path)
+   @token = session[:github_token]
  end
 end
