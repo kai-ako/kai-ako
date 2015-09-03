@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   get '/auth/github/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-  get '/learning_objectives' => 'site#learning_objectives'
-  get "/view_objectives" => "site#view_objectives"
+  resources :learning_objectives
 end
