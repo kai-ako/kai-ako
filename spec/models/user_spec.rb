@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
 			auth = mock_auth_hash
 			other_auth = mock_auth_hash
 			other_auth.uid = SecureRandom.hex
-
+			expect(auth).to_not eq(other_auth)
 			User.find_or_create_from_omniauth(auth)
 			User.find_or_create_from_omniauth(other_auth)
 
