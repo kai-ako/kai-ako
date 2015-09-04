@@ -25,11 +25,15 @@
 		 	}, 
 		"c" => {
 		 	"10" => "the", 
-		 	"11" => "page"
+		 	"11" => {"12" => "page",
+		 			"13" => {"14" => "OH YEAH"}}}
 		}
-	} %>
+	 %>
 
-<%=	populate_tree(this_hash).html_safe %>
+
+	 <% base_level_topics = Topic.where(parent_id: 0) %>
+
+<%=	populate_tree(base_level_topics).html_safe %>
 
 
 <!-- 
