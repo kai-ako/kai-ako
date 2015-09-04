@@ -25,6 +25,11 @@ RSpec.describe EmoState, type: :model do
     user = User.reflect_on_association(:emo_states)
     expect(user.macro).to eq(:has_many)
 
-  "end
+  end
+
+  it "emo_state belongs to user" do
+    state = EmoState.reflect_on_association(:user)
+    expect(state.macro).to eq(:belongs_to)
+  end
 
 end
