@@ -5,6 +5,7 @@ class EmoStateController < ApplicationController
     redirect_to :back
   end
 
+
   private
 
   def emo_params
