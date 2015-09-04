@@ -3,4 +3,5 @@ class Topic < ActiveRecord::Base
 						foreign_key: "parent_id"
 
 	belongs_to :parent, class_name: "Topic"
+
 end

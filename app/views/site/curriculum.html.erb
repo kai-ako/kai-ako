@@ -4,28 +4,11 @@
 
 </div>
 <h1>Curriculum Tree</h1>
+<% Topic.where(parent_id: 0).each do |topic| %>
+
+
+<%= render_topic(topic).html_safe %>
 
 
 
-
-<% base_level_topics = Topic.where(parent_id: 0	) %>
-
-
-<%=	populate_tree(base_level_topics).html_safe %>
-
-
-<!-- 
-
-	<div id="details_tree">
-	<details>
-		<summary>Show/Hide Details</summary>
-			<p>The Details of all importance: 
-				<details>
-					<summary>Show/Hide Details</summary>
-					<p>The Details of all importance</p>
-				</details> 
-			</p>
-	</details> 
-
-	</div>
- -->
+<% end %>
