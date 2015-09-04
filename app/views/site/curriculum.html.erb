@@ -7,31 +7,9 @@
 
 
 
-<% this_hash = {
-		"a" => {
-		 	"1" => "this", 
-		 	"2" => "should", 
-		 	"3" => "print", 
-		 	"4" => {
-		 		"5" => "in", 
-		 		"6" => "this"
-		 	}
-		}, 
-		"b" => {
-			"7" => {
-		 		"8" => "order", 
-		 		"9" => "to"
-		 			}
-		 	}, 
-		"c" => {
-		 	"10" => "the", 
-		 	"11" => {"12" => "page",
-		 			"13" => {"14" => "OH YEAH"}}}
-		}
-	 %>
 
+<% base_level_topics = Topic.where(parent_id: 0	) %>
 
-	 <% base_level_topics = Topic.where(parent_id: 0) %>
 
 <%=	populate_tree(base_level_topics).html_safe %>
 

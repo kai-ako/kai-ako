@@ -17,27 +17,46 @@ module CurriculumTreeHelper
 
 
 
+#If it has no children, puts its name in p tags. If it does, recurse
+
+
+
+
+# def populate_tree(this_level_topics)
+# 		tree = "" 
+# 		this_level_topics.each do |subject|
+# 			tree += "<details><summary>" + subject.name + "</summary>" 
+# 		if subject.children.count 
+# 			subject.children.each do |x|
+# 				puts x.name
+# 				tree += "<>" + x.name + "</p>"
+# 			end
+# 		else
+# 			puts "apple"
+# 			nek_level = subject.children
+# 			populate_tree(nek_level)
+# 		end
+# 		tree += "</details>"
+# 	end
+# 	tree
+# end
 
 
 
 def populate_tree(this_level_topics)
-		puts "bum"
-		tree = "" 
-		this_level_topics.each do |subject|
-			tree += "<details><summary>" + subject.name + "</summary>" 
-		if subject.children.count == 0
-			puts "banana"
-			subject.children.each do |x|
-				tree += "<p>" + x.name + "</p>"
+	tree = ""
+	this_level_topics.each do |level_one|
+		tree += "<details><summary>" + level_one.name + "</summary>"
+		parent_one = level_one.children
+			parent_one.each do |level_two|
+				if level_two.children > 0
+					populate_tree(parent_one)
+				else tree += "<>" + level_two.name + "</p>"
 			end
-		else
-			puts "apple"
-			nek_level = subject.children
-			populate_tree(nek_level)
+
 		end
-		tree += "</details>"
 	end
-	tree
+
 end
 
 end #end of module
