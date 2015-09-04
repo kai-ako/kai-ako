@@ -20,13 +20,11 @@ RSpec.describe EmoState, type: :model do
     emo_state.comment.should == "I feel good"
   end
 
-  it "links user ID to emo_state" do
-    #setup
-    user = create(:user)
-    emo_state = create(:emo_state)
+  it "user can have multiple emo_states" do
 
-    #Check
-    expect(emo_state.user_id).to eq(user.id)
-  end
+    user = User.reflect_on_association(:emo_states)
+    expect(user.macro).to eq(:has_many)
+
+  "end
 
 end
