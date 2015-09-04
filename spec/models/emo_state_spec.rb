@@ -20,4 +20,13 @@ RSpec.describe EmoState, type: :model do
     emo_state.comment.should == "I feel good"
   end
 
+  it "links user ID to emo_state" do
+    #setup
+    user = create(:user)
+    emo_state = create(:emo_state)
+
+    #Check
+    expect(emo_state.user_id).to eq(user.id)
+  end
+
 end
