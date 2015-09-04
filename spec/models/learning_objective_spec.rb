@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe LearningObjective, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+
+  it "creates objective" do
+    objective = LearningObjective.create(title: "Jorys stuff", description: "Not fun!!")
+    expect(LearningObjective.count).to eq(1)
+  end
+
+    it "delete objective" do
+
+      expect()
 end

@@ -1,8 +1,14 @@
 <h1>Things to learn!!</h1>
-<% @objective.each do |f| %>
-  <li><%= f.title %></li>
-  <li><%= f.description %></li>
-<% end %>
-<p>Success</p>
+  <ol>
+    <% @objective.each do |f| %>
+      <li>
+        <h2><%= f.title %></h2>
+        <p><%= f.description %></p>
+        <%= button_to "delete", learning_objective_path(f), method: :delete %>
+      </li>
+    <% end %>
+  </ol>
+
 <%= link_to 'Add new objective', new_learning_objective_path %>
+
 
