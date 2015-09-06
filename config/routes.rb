@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :curated_links
+
   root 'site#index'
 
   get '/profile' => 'profile#show'
