@@ -13,7 +13,7 @@ require 'rails_helper'
     it 'user can submit emotional state form' do
       within('#emo-state') do
         choose('emo_state_emotion_happy')
-        click_button('Save Emo state')
+        click_button('Submit')
       end
       expect(current_path).to eq('/')
     end

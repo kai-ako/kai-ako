@@ -1,11 +1,18 @@
-class EmoStateController < ApplicationController
+class EmoStatesController < ApplicationController
 
+  def index
+
+  end
 
   def create
     @emo_state = EmoState.create(emo_params)
     @emo_state.user = current_user
     @emo_state.save
     redirect_to :back
+  end
+
+  def show
+    @emo_state = EmoState.find([:id])
   end
 
   private
