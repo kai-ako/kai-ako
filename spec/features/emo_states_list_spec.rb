@@ -19,4 +19,14 @@ require 'rails_helper'
       expect(current_path).to eq(emo_states_path)
     end
 
+    it "user can see his emotion in the emotions list" do
+      within('#emo-state') do
+        choose('emo_state_emotion_happy')
+        fill_in  "Comment", with: "I feel good"
+        click_button('Submit')
+      end
+
+      expect(page).to have_content('I feel good')
+    end
+
   end
