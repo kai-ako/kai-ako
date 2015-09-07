@@ -11,16 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902232050) do
+ActiveRecord::Schema.define(version: 20150907230649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cohorts", force: :cascade do |t|
+    t.string   "cohort_name"
+    t.datetime "start_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "emo_states", force: :cascade do |t|
     t.string   "emotion"
     t.string   "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -30,6 +38,8 @@ ActiveRecord::Schema.define(version: 20150902232050) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "github_token"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
 end
