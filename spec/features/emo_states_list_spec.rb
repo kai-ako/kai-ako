@@ -25,6 +25,7 @@ require 'rails_helper'
         choose('emo_state_emotion_happy')
         fill_in  "Comment", with: "I feel good"
         click_button('Submit')
+        click_on('See all')
       end
       expect(page).to have_content('I feel good')
     end
