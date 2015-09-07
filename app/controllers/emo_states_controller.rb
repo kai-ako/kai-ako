@@ -1,6 +1,7 @@
 class EmoStatesController < ApplicationController
 
   def index
+    @emo_states = EmoState.where(user_id: session[:user_id])
 
   end
 

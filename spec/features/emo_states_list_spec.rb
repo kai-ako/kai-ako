@@ -20,12 +20,13 @@ require 'rails_helper'
     end
 
     it "user can see his emotion in the emotions list" do
+      user = create(:user)
+      login_as(user)
       within('#emo-state') do
         choose('emo_state_emotion_happy')
         fill_in  "Comment", with: "I feel good"
         click_button('Submit')
       end
-
       expect(page).to have_content('I feel good')
     end
 

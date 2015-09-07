@@ -1,1 +1,10 @@
 <h1>list</h1>
+  <% @emo_states.each do |emo_state| %>
+    <ul>
+      <strong>how you were feeling on <%= emo_state.created_at %></strong>
+      <li>emotion: <%= emo_state.emotion %> </li>
+      <li>comment: <%= emo_state.comment %> </li>
+    </ul>
+  <% end %>
+
+
