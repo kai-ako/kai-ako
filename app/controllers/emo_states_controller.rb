@@ -1,8 +1,13 @@
 class EmoStatesController < ApplicationController
 
   def index
-    @emo_states = EmoState.where(user_id: session[:user_id])
-
+    user = User.find(user_id: session[:user_id])
+    if user.teacher?
+      users = User.all
+      @emo_states = users.each{|user| user.emo_states.last}
+    else
+      @emo_states = EmoState.where(user_id: session[:user_id])
+    end
   end
 
   def create
