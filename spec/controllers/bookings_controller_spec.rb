@@ -10,8 +10,18 @@ RSpec.describe BookingsController, type: :controller do
 		end
 	end
 	describe 'get #new'
-	describe 'get #edit'
+
+	describe 'get #edit' do
+		let(:mock_booking) {create(:booking)}
+
+		it "booking can be retreived from the database" do
+			get :edit, id: mock_booking
+
+			expect(assigns(:editable_booking).id).to eq(mock_booking.id)
+		end
+	end
 	describe 'get #show'
+
 	describe 'post #create' do
 		let(:booking) {build(:booking)}
 		let(:post_booking) {post :create, booking: booking}
@@ -24,6 +34,6 @@ RSpec.describe BookingsController, type: :controller do
 			expect(response).to redirect_to(bookings_path)
 		end
 	end
-	describe 'put #update' 
-	describe 'delete #destroy' 
+	describe 'put #update'
+	describe 'delete #destroy'
 end
