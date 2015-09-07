@@ -22,7 +22,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'warden', '~> 1.2.3'
   gem 'byebug'
   gem 'capybara'
   gem 'database_cleaner', github: 'geerzo/database_cleaner'
