@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   post '/emo_state' => 'emo_state#create'
+
+  resources :bookings
 end
