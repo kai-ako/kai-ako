@@ -20,6 +20,10 @@ class LearningObjectivesController < ApplicationController
     redirect_to learning_objectives_path
   end
 
+  def complete
+    @objective = LearningObjective.find(params[:id])
+  end
+
   private
 
   def objectives_params

@@ -13,10 +13,11 @@ RSpec.describe User, type: :model do
 			other_auth = mock_auth_hash
 			other_auth.uid = SecureRandom.hex
 			expect(auth).to_not eq(other_auth)
-			User.find_or_create_from_omniauth(auth)
-			User.find_or_create_from_omniauth(other_auth)
 
-			expect(User.count).to eq(2)
+			expect {
+				User.find_or_create_from_omniauth(auth)
+				User.find_or_create_from_omniauth(other_auth)
+			}.to change { User.count }.by(2)
 		end
 
 		it "creates a new user when the current user doesn't exist" do

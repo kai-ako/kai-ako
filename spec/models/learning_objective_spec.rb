@@ -4,11 +4,9 @@ RSpec.describe LearningObjective, type: :model do
 
 
   it "creates objective" do
-    objective = LearningObjective.create(title: "Jorys stuff", description: "Not fun!!")
-    expect(LearningObjective.count).to eq(1)
+    expect {
+      LearningObjective.create(title: "Jorys stuff", description: "Not fun!!")
+    }.to change {LearningObjective.count}.by(1)
   end
 
-    it "delete objective" do
-
-      expect()
 end
