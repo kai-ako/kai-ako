@@ -5,7 +5,8 @@ class LearningObjectivesController < ApplicationController
   end
 
   def index
-    @objective = LearningObjective.all
+    @completed_objectives = LearningObjective.where("completed_at IS NOT NULL")
+    @objectives = LearningObjective.where("completed_at IS NULL")
   end
 
   def create
@@ -22,6 +23,8 @@ class LearningObjectivesController < ApplicationController
 
   def complete
     @objective = LearningObjective.find(params[:id])
+    @objective.update_attribute(:completed_at, Time.now)
+    redirect_to learning_objectives_path
   end
 
   private

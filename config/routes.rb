@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get '/auth/github/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   resources :learning_objectives do
-    post :complete
+    member do
+      post :complete
+    end
+
   end
   post '/emo_state' => 'emo_state#create'
 end
