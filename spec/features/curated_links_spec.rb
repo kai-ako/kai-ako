@@ -13,4 +13,11 @@ require 'rails_helper'
 
 
   end
+  it "persists the link field" do
+    visit curated_links_path
+    fill_in('Link', with: 'http://google.com')
+    click_button('Submit')
+    expect(page).to have_content('http://google.com')
+
+  end
  end

@@ -1,11 +1,19 @@
 class CuratedLinksController < ApplicationController
-  def index
-  end
+    def index
+      @curated_links = CuratedLink.all
+    end
 
-  def new
-  end
+    def new
+    end
 
-  def create
-    redirect_to curated_links_path
-  end
+    def create
+      @curated_link = CuratedLink.new(curated_link_params)
+      @curated_link.save
+      redirect_to curated_links_path
+    end
+  private
+
+    def curated_link_params
+      params.require(:curated_link).permit(:link, :title, :description)
+    end
 end

@@ -13,5 +13,17 @@
 <%end%>
 
 
-
-
+<% @curated_links.each do |curated_link| %>
+<p>
+  <strong>Link:</strong>
+  <%= link_to curated_link.link, curated_link.link %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= curated_link.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= curated_link.description %>
+</p>
+<% end %>
