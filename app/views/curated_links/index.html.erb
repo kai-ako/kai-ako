@@ -1,0 +1,17 @@
+<%= form_for CuratedLink.new do |f| %>
+  <%= f.label :link %>:
+  <%= f.text_field :link%><br />
+
+  <%= f.label :title %>:
+  <%= f.text_field :title %><br />
+
+  <%= f.label :description %>:
+  <%= f.text_field :description %><br />
+
+  <%= f.submit "Submit" %>
+
+<%end%>
+
+
+
+
