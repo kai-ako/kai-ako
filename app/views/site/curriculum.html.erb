@@ -10,5 +10,13 @@
 <%= render_topic(topic).html_safe %>
 
 
+<% end %>
+
+<%= form_for :new_topic, url: {action: "create"}, html: {class: "create_form"} do |f| %>
+
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+  <%= f.collection_select(:parent_id, Topic.all, :id, :name) %>
+  <%= f.submit %>
 
 <% end %>
