@@ -1,8 +1,7 @@
 FactoryGirl.define do
-  factory :user do
-    name "Anna"
-    provider "github"
-    uid "1543576347312"
-  end
-
+	factory :user do
+		name Faker::Name.name
+		provider "github"
+		uid	SecureRandom.hex
+	end
 end
