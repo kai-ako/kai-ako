@@ -22,4 +22,5 @@ module OmniauthMacros
 		mock_auth_hash
 		click_on 'Log In with Github'
 	end
+
 end
