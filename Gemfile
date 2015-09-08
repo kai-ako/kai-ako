@@ -24,10 +24,12 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'capybara'
+  gem "chromedriver-helper"
   gem 'database_cleaner', github: 'geerzo/database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 3.0'
+  gem 'selenium-webdriver'
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end
