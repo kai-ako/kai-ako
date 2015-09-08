@@ -15,4 +15,7 @@ Rails.application.routes.draw do
     end
   end
   resources :emo_states
+  namespace :api do
+    resources :curated_links
+  end
 end
