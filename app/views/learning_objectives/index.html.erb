@@ -2,7 +2,7 @@
 <h1>Things to learn!!</h1>
   <ol>
     <% @objectives.each do |o| %>
-      <li>
+      <li id='objective_<%= o.id%>'>
         <h2><%= o.title %></h2>
         <p><%= o.description %></p>
         <%= button_to "delete", learning_objective_path(o), method: :delete %>
