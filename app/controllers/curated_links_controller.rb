@@ -6,6 +6,13 @@ class CuratedLinksController < ApplicationController
     def new
     end
 
+    def destroy
+    @curated_link = CuratedLink.find(params[:id])
+    @curated_link.destroy
+ 
+    redirect_to curated_links_path
+    end
+
     def create
       @curated_link = CuratedLink.new(curated_link_params)
       @curated_link.save

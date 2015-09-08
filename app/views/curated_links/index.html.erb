@@ -26,4 +26,7 @@
   <strong>Description:</strong>
   <%= curated_link.description %>
 </p>
+<%= link_to 'Destroy', curated_links_path(curated_link),
+method: :delete,
+data: { confirm: 'Are you sure?' } %>
 <% end %>
