@@ -6,9 +6,7 @@ class EmoStatesController < ApplicationController
   end
 
   def create
-    @emo_state = EmoState.create(emo_params)
-    @emo_state.user = current_user
-    @emo_state.save
+    current_user.emo_states.create(emo_params)
     redirect_to :back
   end
 
