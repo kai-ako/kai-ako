@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Booking.destroy_all 
+Topic.destroy_all
+
+t = Topic.create name: "NewThingsToLearn", description: "Wonderful"  
+t.bookings.create(occurs_on: Date.new)
+
+
+
+ 
