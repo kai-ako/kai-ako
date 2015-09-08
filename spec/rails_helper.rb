@@ -6,6 +6,9 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
+
+require_relative 'support/omniauth_macros.rb'
+require_relative 'support/controller_login.rb'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -39,6 +42,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
@@ -53,4 +57,15 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   #config.infer_spec_type_from_file_location!
+
+  config.include(OmniauthMacros)
+  config.include(ControllerSigninHelper)
 end
+
+# Capybara.register_driver :selenium do |app|
+#   Capybara::Selenium::Driver.new(app, :browser => :chrome)
+# end
+
+# Capybara.default_driver = :selenium
+
+OmniAuth.config.test_mode = true
