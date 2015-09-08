@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   get '/auth/github/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
   resources :learning_objectives do
     member do
       post :complete
     end
-
   end
-  post '/emo_state' => 'emo_state#create'
+  resources :emo_states
 end

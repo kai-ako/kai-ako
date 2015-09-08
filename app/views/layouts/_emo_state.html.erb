@@ -1,19 +1,23 @@
-<div id="emo-state">
-  <%= form_for :emo_state, url: emo_state_path do |f| %>
+<% if current_user %>
+  <div id="emo-state">
+    <%= form_for EmoState.new do |f| %>
 
-    <%= f.label :happy %>
-    <%= f.radio_button("emotion", "happy") %>
+      <%= f.label :happy %>
+      <%= f.radio_button("emotion", "happy") %>
 
-    <%= f.label :neutral %>
-    <%= f.radio_button("emotion", "neutral") %>
+      <%= f.label :neutral %>
+      <%= f.radio_button("emotion", "neutral") %>
 
-    <%= f.label :sad %>
-    <%= f.radio_button("emotion", "sad") %>
+      <%= f.label :sad %>
+      <%= f.radio_button("emotion", "sad") %>
 
-    <%= f.label :comment %>
-    <%= f.text_field :comment %>
+      <%= f.label :comment %>
+      <%= f.text_field :comment %>
 
-    <%= f.submit %>
+      <%= f.submit "Submit" %>
 
-  <% end %>
-</div>
+    <% end %>
+    <%= link_to "See all", emo_states_path, class: "btn btn-info btn-sm" %>
+
+  </div>
+<% end %>

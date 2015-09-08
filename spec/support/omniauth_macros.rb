@@ -14,4 +14,13 @@ module OmniauthMacros
 			}
 		})
 	end
+
+	def login (user=nil)
+		user ||= User.find_or_create_by(name: 'Piet', uid: '12345', provider: 'github')
+		@user = user
+		visit root_path
+		mock_auth_hash
+		click_on 'Log In with Github'
+	end
+
 end
