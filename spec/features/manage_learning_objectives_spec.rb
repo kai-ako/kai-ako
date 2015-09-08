@@ -9,7 +9,6 @@ RSpec.feature "Learning objectives" do
     end
 
     it "shows learning objectives page" do
-
       expect(page.body).to have_content("Things to learn!!")
       expect(page.body).to have_content("Learnt!!")
     end
@@ -39,8 +38,13 @@ RSpec.feature "Learning objectives" do
 
     it "checks the done button" do
       fill_in_objective_form
-      expect(page).to have_button('Done')
-      expect('div#learnt').to have_content("Jory's cheat sheet")
+      objective = LearningObjective.last
+      within("#objective_#{objective.id}") do
+        click_button 'Done'
+      end
+      within("div#learnt") do
+        expect(page).to have_content("Jory's cheat sheet")
+      end
     end
   end
 end
