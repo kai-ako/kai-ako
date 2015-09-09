@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe Api::LearningObjectivesController, type: :controller do
 
 	describe 'GET api/learning_ojectives' do
-		let!(:learning_objectives) {create_list(:learning_objective, 7)}
+		let!(:learning_objectives) {create_list(:learning_objective, 10)}
 
 		it "returns json of all learning objectives" do
 			get :index
 			results = JSON.parse(response.body)
-			expect(results.size).to eq(7)
-			expect(results.first["id"]).to eq(learning_objectives.first.id)
+			expect(results.size).to eq(LearningObjective.count)
+			# expect(results.first["id"]).to eq(learning_objectives.first.id)
 		end
 	end
 
@@ -34,10 +34,16 @@ RSpec.describe Api::LearningObjectivesController, type: :controller do
 	end
 
 	describe 'DELETE /api/learning_objectives' do
-			let(:delete_objective) {delete :destroy, :learning_objective}
+			let(:new_objective) {create(:learning_objective)}
+			let(:delete_objective) {post :destroy, id: new_objective.id }
+
+		it 'deletes objective from database' do 
+			new_objective
+			count_minus_1 = LearningObjective.count -1
+			delete_objective
+			expect { LearningObjective.count }.to eq{count_minus_1}
+		end
+
 	end
-
-
-
 
 end

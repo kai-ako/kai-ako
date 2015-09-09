@@ -10,6 +10,10 @@ class Api::LearningObjectivesController < ApplicationController
 		render json: objective, status: 201
 	end
 
+	def destroy
+		render ""
+	end
+
 	private
 	def learning_objective_params
 		params.require(:learning_objective).permit(:title, :description)
