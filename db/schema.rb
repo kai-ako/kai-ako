@@ -16,6 +16,14 @@ ActiveRecord::Schema.define(version: 20150907234014) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "curated_links", force: :cascade do |t|
+    t.string   "link"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "emo_states", force: :cascade do |t|
     t.string   "emotion"
     t.string   "comment"
@@ -25,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150907234014) do
   end
 
   add_index "emo_states", ["user_id"], name: "index_emo_states_on_user_id", using: :btree
+
 
   create_table "learning_objectives", force: :cascade do |t|
     t.string   "title"
@@ -43,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150907234014) do
     t.datetime "updated_at",   null: false
     t.string   "github_token"
     t.boolean  "teacher?"
+
   end
 
 end

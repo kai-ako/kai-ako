@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 
 require_relative 'support/omniauth_macros.rb'
+require_relative 'support/controller_login.rb'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -57,6 +58,13 @@ RSpec.configure do |config|
   #config.infer_spec_type_from_file_location!
 
   config.include(OmniauthMacros)
+  config.include(ControllerSigninHelper)
 end
+
+# Capybara.register_driver :selenium do |app|
+#   Capybara::Selenium::Driver.new(app, :browser => :chrome)
+# end
+
+# Capybara.default_driver = :selenium
 
 OmniAuth.config.test_mode = true

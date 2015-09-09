@@ -1,0 +1,23 @@
+<div id="learning">
+<h1>Things to learn!!</h1>
+  <ol>
+    <% @objectives.each do |o| %>
+      <li id='objective_<%= o.id%>'>
+        <h2><%= o.title %></h2>
+        <p><%= o.description %></p>
+        <%= button_to "delete", learning_objective_path(o), method: :delete %>
+        <%= button_to "Done", complete_learning_objective_path(o) %>
+      </li>
+    <% end %>
+  </ol>
+</div>
+<div id="learnt">
+<h1>Learnt!!</h1>
+<% @completed_objectives.each do |o| %>
+  <li><%= o.title %></li>
+<% end %>
+</div>
+
+<%= link_to 'Add new objective', new_learning_objective_path %>
+
+

@@ -3,6 +3,7 @@ require 'rails_helper'
   feature 'User can submit emotional state' do
 
     before do
+      login
       visit('/')
     end
 
@@ -20,7 +21,6 @@ require 'rails_helper'
     end
 
     it "user can see his emotion in the emotions list" do
-      login
       within('#emo-state') do
         choose('emo_state_emotion_happy')
         fill_in  "Comment", with: "I feel good"

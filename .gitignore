@@ -39,3 +39,5 @@ bower.json
 
 #ignore .env file from dotenv-rails
 .env
+
+.DS_Store
