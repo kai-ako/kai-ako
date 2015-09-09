@@ -2,10 +2,12 @@ class EmoStatesController < ApplicationController
 
   def index
 
-    user = User.find(user_id: session[:user_id])
-    if user.teacher?
-      users = User.all
-      @emo_states = users.each{|user| user.emo_states.last}
+    @user = User.find_by(id: session[:user_id])
+    if @user.teacher?
+      # debugger
+      @users = User.all
+      @emo_states = []
+      @users.each{|user| @emo_states.push(user.emo_states.last)}
     else
       @emo_states = EmoState.where(user_id: session[:user_id])
     end
