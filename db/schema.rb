@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20150907234014) do
 
   add_index "emo_states", ["user_id"], name: "index_emo_states_on_user_id", using: :btree
 
-
   create_table "learning_objectives", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -52,7 +51,6 @@ ActiveRecord::Schema.define(version: 20150907234014) do
     t.datetime "updated_at",   null: false
     t.string   "github_token"
     t.boolean  "teacher?"
-
   end
 
 end
