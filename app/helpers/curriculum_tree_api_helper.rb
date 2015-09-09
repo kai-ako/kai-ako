@@ -1,0 +1,2 @@
+module CurriculumTreeApiHelper
+end
