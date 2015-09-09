@@ -14,8 +14,12 @@ Rails.application.routes.draw do
       post :complete
     end
   end
+  
   resources :emo_states
+
   namespace :api do
     resources :curated_links
+    resources :learning_objectives
   end
+
 end
