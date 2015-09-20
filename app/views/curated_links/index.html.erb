@@ -1,4 +1,4 @@
-<%= form_for CuratedLink.new do |f| %>
+<%= form_for :curated_link do |f| %>
   <%= f.label :link %>:
   <%= f.text_field :link%><br />
 
@@ -14,19 +14,19 @@
 
 
 <% @curated_links.each do |curated_link| %>
-<p>
-  <strong>Link:</strong>
-  <%= link_to curated_link.link, curated_link.link %>
-</p>
-<p>
-  <strong>Title:</strong>
-  <%= curated_link.title %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= curated_link.description %>
-</p>
-<%= link_to 'Destroy', curated_links_path(curated_link),
-method: :delete,
-data: { confirm: 'Are you sure?' } %>
+  <p>
+    <strong>Link:</strong>
+    <%= link_to curated_link.link, curated_link.link %>
+  </p>
+  <p>
+    <strong>Title:</strong>
+    <%= curated_link.title %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= curated_link.description %>
+  </p>
+  <%= link_to 'Destroy', curated_link_path(curated_link),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>
 <% end %>
