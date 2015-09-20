@@ -13,6 +13,7 @@
         <%= link_to 'Home', root_path %> |
         <%= link_to 'Profile', profile_path(current_user) %> |
         <%= link_to 'Learning Objectives', learning_objectives_path %> |
+        <%= link_to 'Cohorts', new_cohort_path %> |
         <%= link_to 'Log Out', logout_path %>
       <% else %>
         <%= link_to 'Log In with Github', login_path %>

@@ -1,0 +1,14 @@
+<%= form_for :cohort,url:cohort_index_path do |f| %>
+
+  <%= f.label :cohort_Name %>:
+  <%= f.text_field :cohort_Name %><br />
+
+  <%= f.label :start_Date %>:
+  <%= f.text_field :start_Date %><br />
+
+  <%= f.label :end_Date %>:
+  <%= f.text_field :end_Date %><br />
+
+  <%= f.submit %>
+
+<% end %>
