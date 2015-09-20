@@ -22,7 +22,7 @@ RSpec.feature "Learning objectives" do
 
   end
 
-  context 'testing database' do
+  context 'test page actions'do
 
     let(:fill_in_objective_form) do
       visit new_learning_objective_path
@@ -40,7 +40,6 @@ RSpec.feature "Learning objectives" do
     it "checks the done button" do
       fill_in_objective_form
       expect(page).to have_button('Done')
-      expect('div#learnt').to have_content("Jory's cheat sheet")
     end
   end
 end
