@@ -1,13 +1,22 @@
-module CurriculumTreeHelper
-
+module CurriculumHelper
 
 	def render_topic(topic)
+
 		if topic.children.count > 0 
 			("<details><summary>" + topic.name + "</summary>" + topic.children.map {|a| render_topic(a)}.join(" ") + "</details>")
 		else
 			"<p>" + topic.name + "</p>"
 		end
 	end
+end
+
+
+		 del = "<%= button_to :delete, curriculum_path(:id => this.id), :method => :delete %>"
+
+
+
+
+# I would like to keep these comments here for a bit, as a record of my working this out so I can come back to it
 
 # 	def populate_tree(hashyhash)
 # 			tree = "" 
@@ -67,5 +76,3 @@ module CurriculumTreeHelper
 # 	end
 
 # end
-
-end #end of module

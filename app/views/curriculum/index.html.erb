@@ -8,6 +8,9 @@
 
 
 <%= render_topic(topic).html_safe %>
+<%= button_to :delete, curriculum_path(:id => topic.id), :method => :delete %>
+
+
 
 
 <% end %>
@@ -20,3 +23,4 @@
   <%= f.submit %>
 
 <% end %>
+

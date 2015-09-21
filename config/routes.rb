@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root 'site#index'
 
   get '/profile' => 'profile#show'
-  get '/curriculum' => 'site#curriculum'
-  post '/curriculum/new' => 'site#create'
+  get '/curriculum' => 'curriculum#index'
+  post '/curriculum/new' => 'curriculum#create'
+  post 'curiculum/delete' => 'curriculum#destroy'
 
   get '/login' => 'sessions#new'
   get '/auth/github/callback' => 'sessions#create'
