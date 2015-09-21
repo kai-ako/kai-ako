@@ -1,0 +1,9 @@
+<%= link_to "New Cohort",new_cohort_path %>
+<br>
+<br>
+
+<% @cohorts.each do |cohort| %>
+	<%= cohort.cohort_Name %>
+	<br>
+<% end %>
+

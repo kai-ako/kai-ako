@@ -1,13 +1,18 @@
+<%
+	startDate = Time.now
+	endDate = Time.now + 63.days
+%>
+
 <%= form_for :cohort,url:cohort_index_path do |f| %>
 
   <%= f.label :cohort_Name %>:
-  <%= f.text_field :cohort_Name %><br />
+  <%= f.text_field :cohort_Name %><br>
 
   <%= f.label :start_Date %>:
-  <%= f.text_field :start_Date %><br />
+  <%= f.date_field :start_Date, :value => startDate.strftime('%Y-%m-%d')  %><br>
 
   <%= f.label :end_Date %>:
-  <%= f.text_field :end_Date %><br />
+  <%= f.date_field :end_Date, :value => endDate.strftime('%Y-%m-%d') %><br>
 
   <%= f.submit %>
 

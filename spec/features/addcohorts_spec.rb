@@ -14,7 +14,7 @@ RSpec.feature "Addcohorts" do
 	it 'fill in form and expect db to change' do
 		fill_in_new_cohort
 
-		expect(page).to have_contenct("Kahu")
+		expect(page).to have_content("Kahu")
 	end
 
 end

@@ -1,9 +1,12 @@
 class CohortController < ApplicationController
 
+# Display
+
 	def index
+		@cohorts = Cohort.all
 	end
 
-# Display
+
 	def new
 	end
 # Display
