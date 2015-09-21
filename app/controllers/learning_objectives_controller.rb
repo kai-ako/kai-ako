@@ -15,7 +15,6 @@ class LearningObjectivesController < ApplicationController
   end
 
   def destroy
-
     @objective = LearningObjective.find(params[:id])
     @objective.destroy
     redirect_to learning_objectives_path

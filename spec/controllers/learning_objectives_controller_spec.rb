@@ -19,15 +19,19 @@ RSpec.describe LearningObjectivesController, type: :controller do
 
     xit 'redirects to learning_objectives_path' do
       post :complete
-
+      # not sure of my tests here
       expect(response).to be(learning_objectives_path)
     end
   end
 
-   describe 'POST #create' do
+   # describe 'POST #create' do
 
-    it ''
-   end
+   #  it 'redirects to learning_objectives_path' do
+   #    post :create
+
+   #    # Not sure of my tests here
+   #  end
+   # end
 
   # describe 'GET #new' do
   # end
